@@ -1,0 +1,27 @@
+{
+  "name": "menueseql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "docker build -t menueseback . && docker-compose up"
+  },
+  "author": "roitman-g",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^0.13.2",
+    "join-monster": "^2.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.0.2",
+    "rambda": "^5.1.1",
+    "sha256": "^0.2.0"
+  }
+}

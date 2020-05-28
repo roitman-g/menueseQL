@@ -1,0 +1,33 @@
+version: '3'
+services: 
+    database:
+        image: postgres
+        environment:
+            POSTGRES_PASSWORD: throwingknife
+            POSTGRES_DB: menuese
+            DATABASE_URL: postgres://postgres:throwingknife@database:5432/menuese
+        ports:
+            - "5432:5432"
+        # volumes:
+            # - $HOME/docker/volumes/postgres:/var/lib/postgresql/data
+    # test:   
+    #     build:
+    #         context: ./
+    #     command: npm test
+    app:
+        image: menueseback
+        depends_on: 
+            - database
+        ports: 
+            - "4000:4000"
+        environment:
+            DATABASE_PASSWORD: throwingknife
+            DATABASE_NAME: menuese
+            DATABASE_HOST: database
+            DATABASE_URL: postgres://postgres:throwingknife@database:5432/menuese
+            DATABASE_PORT: 5432
+            DATABASE_USER: postgres
+        
+    
+    
+
